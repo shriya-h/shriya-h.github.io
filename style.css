@@ -34,3 +34,13 @@ h1 {
     }
 }
 
+body {
+    background-color: white;
+    color: black;
+  }
+  
+  .dark-mode {
+    background-color: #222;
+    color: #eee;
+  }
+  

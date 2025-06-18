@@ -9,6 +9,8 @@
     <title>About Me</title>
 </head>
 <body>
+    <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+
     <nav class="mb-3">
         <a class="btn btn-primary" href="index.html">Home</a>
         <a class="btn btn-primary" href="about.html">About</a>
@@ -19,4 +21,11 @@
     <h1>About Me</h1>
     <p>I am a Mathematics and Computing graduate from IIT Kharagpur, working as a software engineer at Google.</p>
 </body>
+
+<script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+    </script>
+    
 </html>
