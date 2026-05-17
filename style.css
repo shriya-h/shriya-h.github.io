@@ -1,46 +1,92 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: #f8f9fa;
-    color: #222;
+:root {
+    --bg-color: #1a1a2e;
+    --text-color: #f4f4f2;
+    --accent-color: #e94560;
+    --nav-hover: #16213e;
+    --border-color: #444466;
 }
 
-nav {
-    margin-bottom: 30px;
+body.hacker-theme {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
 }
 
-nav a {
-    text-decoration: none;
-    color: #0077cc;
-    margin-right: 15px;
+/* Light Mode Overrides */
+body.light-mode {
+    --bg-color: #f4f4f2;
+    --text-color: #1a1a2e;
+    --accent-color: #0f3460;
+    --nav-hover: #e0e0e0;
+    --border-color: #cccccc;
+}
+
+.navbar {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    color: var(--text-color) !important;
     font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+    border-radius: 4px;
 }
 
-nav a:hover {
-    color: #005fa3;
+.nav-link:hover {
+    background-color: var(--nav-hover);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
-h1 {
-    color: #333;
+.btn-outline-beige {
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    background: transparent;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.btn-outline-beige:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+h1, h2, h3 {
+    color: var(--accent-color);
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+.text-muted {
+    color: rgba(244, 244, 242, 0.6) !important;
+}
+
+main.container {
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.02);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Cursor effect for hacker feel */
+h1::after {
+    content: '_';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 @media (max-width: 600px) {
-    body {
-        margin: 10px;
+    .navbar-nav {
+        flex-direction: column;
     }
-    nav a {
-        display: block;
-        margin: 10px 0;
+    .nav-link {
+        margin-bottom: 0.5rem;
     }
 }
-
-body {
-    background-color: white;
-    color: black;
-  }
-  
-  .dark-mode {
-    background-color: #222;
-    color: #eee;
-  }
-  
